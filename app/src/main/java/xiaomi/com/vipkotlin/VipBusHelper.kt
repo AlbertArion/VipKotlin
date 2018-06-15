@@ -23,7 +23,7 @@ open class VipBusHelper {
 
         fun create(): VipBusHelper = VipBusHelper()
 
-        fun collect(vararg args: Bus) {
+        fun collect(vararg args: User) {
             for (item in args) {
                 println(item)
             }
@@ -34,12 +34,12 @@ open class VipBusHelper {
         val busStr: String = ""
         busStr.hasValue()
         busStr.isEmpty()
-        val bus: Bus = Bus("", 1);
-        println("Vip bus name = " + bus.name + ", bus age = " + bus.age)
+        val user: User = User("", 1);
+        println("Vip bus name = " + user.name + ", bus age = " + user.age)
     }
 
     fun haveMoreFun(act: Activity) {
-        val busGroup = listOf<Bus>(Bus("global"), Bus(name = "china", age = 1), Bus("USA", age = 2), Bus("UK", 3))
+        val busGroup = listOf<User>(User("global"), User(name = "china", age = 1), User("USA", age = 2), User("UK", 3))
         val oldest = busGroup.maxBy { it.age }
         println("The oldest is: $oldest")
         println("The top-level x = ${haveTopFun()}")
@@ -97,6 +97,11 @@ open class VipBusHelper {
             sum(1, 1) -> println("1 + 1 = ?")
             else -> println("otherwise")
         }
+    }
+
+    private fun decomp() {
+        var (name, age) = User("Albert", 18)
+
     }
 
     fun printMe() {

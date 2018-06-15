@@ -7,14 +7,14 @@ package xiaomi.com.vipkotlin
  * on 18-6-5.
  */
 
-data class Bus constructor(var name: String = "", var age: Int = 0) {
+data class User constructor(var name: String = "", var age: Int = 0) {
     init {
         println("Constructor init: Bus")
     }
 
-    constructor(bus: Bus) : this() {
-        name = bus.name
-        age = bus.age
+    constructor(user: User) : this() {
+        name = user.name
+        age = user.age
     }
 
     override fun toString(): String {

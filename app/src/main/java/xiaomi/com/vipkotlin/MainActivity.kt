@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         /**
          * Static fun usage.
          */
-        VipBusHelper.collect(Bus(name = "1", age = 12))
+        VipBusHelper.collect(User(name = "1", age = 12))
 
         /**
          * Member fun usage.
