@@ -9,7 +9,7 @@ package xiaomi.com.vipkotlin
 
 data class User constructor(var name: String = "", var age: Int = 0) {
     init {
-        println("Constructor init: Bus")
+        println("Constructor init: User")
     }
 
     constructor(user: User) : this() {
@@ -18,6 +18,6 @@ data class User constructor(var name: String = "", var age: Int = 0) {
     }
 
     override fun toString(): String {
-        return "Bus(name: $name, age: $age)";
+        return "User(name: $name, age: $age)";
     }
 }

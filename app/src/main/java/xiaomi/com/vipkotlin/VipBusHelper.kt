@@ -99,9 +99,8 @@ open class VipBusHelper {
         }
     }
 
-    private fun decomp() {
+    private fun deconstruct() {
         var (name, age) = User("Albert", 18)
-
     }
 
     fun printMe() {
