@@ -2,6 +2,7 @@ package xiaomi.com.vipkotlin
 
 import android.app.Activity
 import android.content.Context
+import xiaomi.com.article.writeArticle
 import xiaomi.com.toplevel.hasValue
 
 /**
@@ -16,7 +17,7 @@ open class VipBusHelper {
     internal var context = null
     private var page = null
     private var history: String = "history"
-    private var map: Map<String, Int> = mapOf("me" to 12, "you" to 13, "him" to 14, "her" to 15)
+    private var map: MutableMap<String, Int> = mutableMapOf("me" to 12, "you" to 13, "him" to 14, "her" to 15)
 
     companion object Factory {
 
@@ -44,8 +45,12 @@ open class VipBusHelper {
         println("The top-level x = ${haveTopFun()}")
     }
 
-    fun makeMapHaveFun() {
-        map.mapValues { }
+    fun makeMapHaveFun(): Map<String, Int> {
+        return map.filter({ m -> m.value < 15 })
+    }
+
+    fun maxInt(a: Int, b: Int): Int {
+        return if (a > b) a else b
     }
 
     private fun haveNoFun(str: String): Int? {
@@ -82,12 +87,27 @@ open class VipBusHelper {
         return f(a, b)
     }
 
+    private fun rangeCtrlFun(x: Any) {
+        for (i in 10 downTo 1 step 2) {
+            println("Int value: $i")
+        }
+        when (x) {
+            -1, 0 -> println("x is -1 or 0")
+            in 1..10 -> println("x is in the range[1..10]")
+            sum(1, 1) -> println("1 + 1 = ?")
+            else -> println("otherwise")
+        }
+    }
+
     fun printMe() {
         Man.create()
         val lambdaResult = higherOrderPlus(1, 2, { a, b -> a + b })
         val funRefResult = higherOrderPlus(1, 2, Int::plus)
         println("The lambda sum of 1 and 2 is: $lambdaResult")
         println("The fun ref sum of 1 and 2 is: $funRefResult")
+        println("The filtered map is: ${makeMapHaveFun()}")
+
+        writeArticle()
     }
 
 }
