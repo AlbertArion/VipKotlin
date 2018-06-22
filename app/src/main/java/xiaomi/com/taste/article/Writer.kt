@@ -1,4 +1,4 @@
-package xiaomi.com.article
+package xiaomi.com.taste.article
 
 /**
  * Copyright (C) 2013, Xiaomi Inc. All rights reserved.

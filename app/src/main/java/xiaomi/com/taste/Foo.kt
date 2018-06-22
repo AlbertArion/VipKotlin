@@ -1,4 +1,4 @@
-package xiaomi.com.vipkotlin
+package xiaomi.com.taste
 
 /**
  * Copyright (C) 2013, Xiaomi Inc. All rights reserved.

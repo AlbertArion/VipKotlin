@@ -1,6 +1,6 @@
 package xiaomi.com.trip.conveynace.tools
 
-import xiaomi.com.trip.conveynace.Tool
+import xiaomi.com.trip.conveynace.TripTool
 
 /**
  * Copyright (C) 2013, Xiaomi Inc. All rights reserved.
@@ -9,6 +9,9 @@ import xiaomi.com.trip.conveynace.Tool
  * on 18-6-22.
  */
 
-class NoWay : Tool() {
-    override fun getPrice(): Float = Float.MAX_VALUE
+class NoWay : TripTool() {
+    override fun getPrice(): Int = Int.MAX_VALUE
+    override fun toString(): String {
+        return "Trip: No way!\n"
+    }
 }

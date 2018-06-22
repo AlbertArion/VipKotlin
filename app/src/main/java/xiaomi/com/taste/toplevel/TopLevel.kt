@@ -1,4 +1,4 @@
-package xiaomi.com.toplevel
+package xiaomi.com.taste.toplevel
 
 /**
  * Copyright (C) 2013, Xiaomi Inc. All rights reserved.

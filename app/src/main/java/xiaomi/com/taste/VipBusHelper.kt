@@ -1,9 +1,10 @@
-package xiaomi.com.vipkotlin
+package xiaomi.com.taste
 
 import android.app.Activity
 import android.content.Context
-import xiaomi.com.article.writeArticle
-import xiaomi.com.toplevel.hasValue
+import xiaomi.com.taste.article.writeArticle
+import xiaomi.com.taste.toplevel.hasValue
+import xiaomi.com.taste.toplevel.plus
 
 /**
  * Copyright (C) 2013, Xiaomi Inc. All rights reserved.
@@ -38,7 +39,7 @@ open class VipBusHelper {
         println("Vip bus name = " + user.name + ", bus age = " + user.age)
     }
 
-    fun haveMoreFun(act: Activity) {
+    fun haveMoreFun(context: Context) {
         val busGroup = listOf<User>(User("global"), User(name = "china", age = 1), User("USA", age = 2), User("UK", 3))
         val oldest = busGroup.maxBy { it.age }
         println("The oldest is: $oldest")
@@ -106,8 +107,36 @@ open class VipBusHelper {
         var (name, age) = User("Albert", 18)
     }
 
-    fun printMe() {
-        Man.create()
+    fun printMe(context: Context) {
+
+        /**
+         * Static fun usage.
+         */
+        VipBusHelper.collect(User(name = "1", age = 12))
+
+        /**
+         * Member fun usage.
+         */
+        haveFun(context)
+        haveMoreFun(context)
+
+        /**
+         * Extension usage.
+         */
+        val variable = "variable"
+        variable.hasValue()
+
+        /**
+         * Infix usage.
+         */
+        println("Top-level infix fun usage: 1 plus 2 = ${1 plus 2}")
+
+        /**
+         * Higher-order funs & lambdas
+         */
+
+        createMan()
+
         val lambdaResult = higherOrderPlus(1, 2, { a, b -> a + b })
         val funRefResult = higherOrderPlus(1, 2, Int::plus)
         println("The lambda sum of 1 and 2 is: $lambdaResult")

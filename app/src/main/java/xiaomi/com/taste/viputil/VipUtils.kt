@@ -1,7 +1,7 @@
-package xiaomi.com.viputil
+package xiaomi.com.taste.viputil
 
-import xiaomi.com.toplevel.hasValue
-import xiaomi.com.vipkotlin.VipBusHelper
+import xiaomi.com.taste.toplevel.hasValue
+import xiaomi.com.taste.VipBusHelper
 
 /**
  * Copyright (C) 2013, Xiaomi Inc. All rights reserved.

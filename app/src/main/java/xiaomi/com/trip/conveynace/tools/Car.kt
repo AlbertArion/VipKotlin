@@ -1,7 +1,7 @@
 package xiaomi.com.trip.conveynace.tools
 
-import xiaomi.com.trip.conveynace.Tool
-import xiaomi.com.trip.conveynace.ToolType
+import xiaomi.com.trip.conveynace.TripTool
+import xiaomi.com.trip.conveynace.TripType
 
 /**
  * Copyright (C) 2013, Xiaomi Inc. All rights reserved.
@@ -11,14 +11,17 @@ import xiaomi.com.trip.conveynace.ToolType
  */
 
 data class Car(val schedule: xiaomi.com.trip.Schedule,
-               val type: ToolType = ToolType.Car)
-    : Tool() {
+               val type: TripType = TripType.SelfDriving)
+    : TripTool() {
 
-    override fun getPrice(): Float = priceMap.getOrDefault(schedule.getRoute(), Float.MAX_VALUE)
+    override fun getPrice(): Int = priceMap.getOrDefault(schedule.getRoute(), Int.MAX_VALUE)
 
-    val priceMap = mapOf<CharSequence, Float>(
-            "Beijing-Hangzhou" to 1200F,
-            "Beijing-Tianjin" to 200F,
-            "Beijing-sanya" to 3000F)
+    val priceMap = mapOf<String, Int>(
+            "Beijing-Hangzhou" to 1200,
+            "Beijing-Tianjin" to 200,
+            "Beijing-sanya" to 3000)
 
+    override fun toString(): String {
+        return "Trip: $schedule \n type: $type \n cost: ${getPrice()}\n"
+    }
 }
