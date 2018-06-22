@@ -16,6 +16,7 @@ internal class Foo constructor(var name: String = "", age: Int = 0) : Person() {
     var nickname: String = ""
         get() = "Foo:" + field
         set(value) {
+            println("execute setter for nickname in Foo")
             field = value
         }
 }

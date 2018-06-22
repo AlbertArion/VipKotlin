@@ -46,6 +46,9 @@ open class VipBusHelper {
     }
 
     fun makeMapHaveFun(): Map<String, Int> {
+        for ((k, v) in map) {
+            if (v < 14) println("map element, k = $k")
+        }
         return map.filter({ m -> m.value < 15 })
     }
 
@@ -99,7 +102,7 @@ open class VipBusHelper {
         }
     }
 
-    private fun deconstruct() {
+    fun deconstruct() {
         var (name, age) = User("Albert", 18)
     }
 
@@ -119,3 +122,7 @@ open class VipBusHelper {
 // Top-level variables
 val PI = 3.14
 var x = Int.MIN_VALUE
+
+fun main(args: Array<String>) {
+    VipBusHelper().deconstruct()
+}

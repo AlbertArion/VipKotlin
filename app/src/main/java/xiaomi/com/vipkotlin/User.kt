@@ -8,16 +8,20 @@ package xiaomi.com.vipkotlin
  */
 
 data class User constructor(var name: String = "", var age: Int = 0) {
+
     init {
         println("Constructor init: User")
     }
 
-    constructor(user: User) : this() {
-        name = user.name
-        age = user.age
+    var nickName: String = ""
+
+    constructor(ageP: Int, nameP: String, nickName: String) : this() {
+        this.name = nameP
+        this.age = ageP
+        this.nickName = nickName
     }
 
     override fun toString(): String {
-        return "User(name: $name, age: $age)";
+        return "User(name: $name, age: $age, nickName: $nickName)";
     }
 }
