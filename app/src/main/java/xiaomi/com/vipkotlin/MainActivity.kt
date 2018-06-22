@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        dests.dropDownVerticalOffset = 200
+        dests.dropDownVerticalOffset = 120
         val destList = listOf("Hangzhou", "Tianjin", "Sanya")
         val destAdapter = ArrayAdapter<String>(this, R.layout.spinner_item, destList)
         dests.adapter = destAdapter
